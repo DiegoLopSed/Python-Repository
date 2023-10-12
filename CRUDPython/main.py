@@ -3,8 +3,6 @@ from mi_clase import MiClase, objetos
 from metodos_mi_clase import buscar_objeto_por_numero_de_parte, eliminar_objeto_por_numero_de_parte
 
 
-
-
 while True:
 
     
