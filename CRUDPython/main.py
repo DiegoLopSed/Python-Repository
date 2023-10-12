@@ -57,3 +57,5 @@ while True:
 
     else:
         print("Opción no válida. Intente de nuevo.")
+
+#Menu principal de la aplicación
