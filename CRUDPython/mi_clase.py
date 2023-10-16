@@ -1,9 +1,6 @@
-objetos = []
-
-class MiClase:
-    def __init__(self, numero_de_parte, clasificacion, marca, categoria, subcategoria,
-                 compatibilidad, posicion, nombre_producto, costo_fabrica, precio_venta, descripcion, origen):
-        self.numero_de_parte = numero_de_parte
+class Partes:
+    def __init__(self, num_parte, clasificacion, marca, categoria, subcategoria, compatibilidad, posicion, nombre_producto, costo_fabrica, precio_venta, descripcion, origen):
+        self.num_parte = num_parte
         self.clasificacion = clasificacion
         self.marca = marca
         self.categoria = categoria
@@ -16,53 +13,53 @@ class MiClase:
         self.descripcion = descripcion
         self.origen = origen
 
-    @classmethod
-    def crear_objeto_desde_teclado(cls):
-        numero_de_parte = input("Ingrese el número de parte: ")
-        clasificacion = input("Ingrese la clasificación: ")
-        marca = input("Ingrese la marca: ")
-        categoria = input("Ingrese la categoría: ")
-        subcategoria = input("Ingrese la subcategoría: ")
-        compatibilidad = input("Ingrese la compatibilidad: ")
-        posicion = input("Ingrese la posición: ")
-        nombre_producto = input("Ingrese el nombre del producto: ")
-        costo_fabrica = input("Ingrese el costo de fábrica: ")
-        precio_venta = input("Ingrese el precio de venta: ")
-        descripcion = input("Ingrese la descripción: ")
-        origen = input("Ingrese el origen: ")
-
-        return cls(numero_de_parte, clasificacion, marca, categoria, subcategoria,
-                   compatibilidad, posicion, nombre_producto, costo_fabrica, precio_venta, descripcion, origen)
-    
-
-objeto1 = MiClase(
-    numero_de_parte="12345",
-    clasificacion="Clase A",
-    marca="Marca X",
-    categoria="Categoría 1",
-    subcategoria="Subcategoría 1",
-    compatibilidad="Compatibilidad 1",
-    posicion="Posición 1",
-    nombre_producto="Producto 1",
-    costo_fabrica="100.00",
-    precio_venta="150.00",
-    descripcion="Descripción 1",
-    origen="Origen 1"
+        
+# Crear objeto 1
+producto1 = Partes(
+    num_parte="001",
+    clasificacion="Electrónica",
+    marca="Sony",
+    categoria="Televisores",
+    subcategoria="LED",
+    compatibilidad="1080p",
+    posicion="Sala de estar",
+    nombre_producto="Televisor LED de 55 pulgadas",
+    costo_fabrica=500,
+    precio_venta=799.99,
+    descripcion="Televisor LED de alta definición de 55 pulgadas.",
+    origen="China"
 )
 
-objeto2 = MiClase(
-    numero_de_parte="67890",
-    clasificacion="Clase B",
-    marca="Marca Y",
-    categoria="Categoría 2",
-    subcategoria="Subcategoría 2",
-    compatibilidad="Compatibilidad 2",
-    posicion="Posición 2",
-    nombre_producto="Producto 2",
-    costo_fabrica="80.00",
-    precio_venta="120.00",
-    descripcion="Descripción 2",
-    origen="Origen 2"
+# Crear objeto 2
+producto2 = Partes(
+    num_parte="002",
+    clasificacion="Electrodomésticos",
+    marca="Samsung",
+    categoria="Lavadoras",
+    subcategoria="Carga frontal",
+    compatibilidad="7 kg",
+    posicion="Cocina",
+    nombre_producto="Lavadora de carga frontal",
+    costo_fabrica=400,
+    precio_venta=599.99,
+    descripcion="Lavadora de carga frontal de 7 kg de capacidad.",
+    origen="Corea del Sur"
 )
 
-objetos = [objeto1, objeto2]
+# Crear objeto 3
+producto3 = Partes(
+    num_parte="003",
+    clasificacion="Electrónica",
+    marca="Apple",
+    categoria="Smartphones",
+    subcategoria="iOS",
+    compatibilidad="iPhone 13",
+    posicion="Bolsillo",
+    nombre_producto="iPhone 13 Pro",
+    costo_fabrica=800,
+    precio_venta=1199.99,
+    descripcion="Último modelo de iPhone con características avanzadas.",
+    origen="Estados Unidos"
+)
+
+productos = [producto1, producto2, producto3]
