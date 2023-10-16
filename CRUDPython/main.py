@@ -1,61 +1,54 @@
 import os
-from mi_clase import MiClase, objetos
-from metodos_mi_clase import buscar_objeto_por_numero_de_parte, eliminar_objeto_por_numero_de_parte
+from mi_clase import Partes, productos
+from clase_gestor import GestorDeObjetos
 
+# Ejemplo de uso
+manager = GestorDeObjetos()
 
 while True:
+    print("Opciones:")
+    print("1. Insertar un producto")
+    print("2. Buscar producto por número de parte")
+    print("3. Mostrar todos los productos")
+    print("4. Actualizar producto por número de parte")
+    print("5. Eliminar producto por número de parte")
+    print("6. Limpiar pantalla")
+    print("7. Salir")
 
-    
-    # Mostrar un menú de selección
-    print("\nMenú de selección:")
-    print("1. Agregar objeto")
-    print("2. Mostrar objetos")
-    print("3. Buscar objeto por número de parte")
-    print("4. Eliminar objeto por número de parte")
-    print("5. Limpiar consola")
-    print("6. Salir")
-
-    opcion = input("Seleccione una opción (1/2/3/4/5/6): ")
-    
+    opcion = input("Seleccione una opción: ")
 
     if opcion == "1":
-        # Agregar objeto
-        objeto = MiClase.crear_objeto_desde_teclado()
-        objetos.append(objeto)
-        print("Objeto agregado.")
+        manager.insertar_producto()
 
     elif opcion == "2":
-        # Mostrar los atributos de los objetos
-        for i, objeto in enumerate(objetos, 1):
-            print(f"Objeto {i}:")
-            print("Número de parte:", objeto.numero_de_parte)
-            print("Clasificación:", objeto.clasificacion)
-            print("Marca:", objeto.marca)
+        num_parte = input("Ingrese el número de parte a buscar: ")
+        producto_buscado = manager.buscar_producto(num_parte)
+        if producto_buscado:
+            print("Producto encontrado:")
+            print("Número de parte:", producto_buscado.num_parte)
+            # Mostrar otros atributos aquí
+        else:
+            print("Producto no encontrado.")
 
     elif opcion == "3":
-        # Buscar objeto por número de parte
-        numero_buscar = input("Ingrese el número de parte a buscar: ")
-        objeto_encontrado = buscar_objeto_por_numero_de_parte(objetos, numero_buscar)
-        if objeto_encontrado:
-            print("Objeto encontrado:")
-            print("Número de parte:", objeto_encontrado.numero_de_parte)
-            print("Descripción:", objeto_encontrado.descripcion)
-        else:
-            print("Objeto no encontrado.")
+        manager.mostrar_productos(productos)
 
     elif opcion == "4":
-        # Eliminar objeto por número de parte
-        numero_eliminar = input("Ingrese el número de parte a eliminar: ")
-        eliminar_objeto_por_numero_de_parte(objetos, numero_eliminar)
-        print(f"Objeto {numero_eliminar} eliminado.")
 
+        num_parte_a_eliminar = input("Ingrese el número de parte a eliminar: ")
+        producto_eliminado = manager.eliminar_producto(num_parte_a_eliminar)
+        if producto_eliminado:
+            print("Producto eliminado con éxito.")
+        else:
+            print("No se encontró el producto para eliminar.")
     elif opcion == "5":
-        os.system('cls')
+        num_parte_a_eliminar = input("Ingrese el número de parte a eliminar: ")
+        manager.eliminar_producto(num_parte_a_eliminar)
 
     elif opcion == "6":
+        os.system('cls')
+        
+    elif opcion == "7":
         break
-
     else:
         print("Opción no válida. Intente de nuevo.")
-
-#Menu principal de la aplicación
