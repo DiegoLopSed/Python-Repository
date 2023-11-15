@@ -10,7 +10,7 @@ for f in matriz: #* Muestra los elementos de la matriz
 for i in range (3): #? Cambia los elementos de la matriz por datos ingresados por el usuario
     for j in range (3):
         print("Posición:",i,",",j)
-        matriz[i][j]=int(input("Numero:"))
+        matriz[i][j]=int(input("Numero:")) #! Lee numeros a almacenar
 
 for f in matriz: #* Muestra los elementos de la matriz
     print(f)
