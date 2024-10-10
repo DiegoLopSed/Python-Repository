@@ -1,5 +1,3 @@
-from Arreglos_Matrices.Arreglos import Arreglo1
-print(Arreglo1)
 # Comentario de una línea
 # Estos comentarios se utilizan para agregar explicaciones en el código
 
